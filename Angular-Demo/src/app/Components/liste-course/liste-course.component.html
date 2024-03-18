@@ -1,0 +1,15 @@
+<h1> test </h1>
+<div>
+    <h2>Liste de courses</h2>
+    <ul>
+      <li *ngFor="let course of courses; let i = index">
+        {{ course }}
+        <button (click)="removeCourse(i)">Supprimer</button>
+      </li>
+    </ul>
+  
+    <div>
+      <button (click)="addCourse()">Ajouter</button>
+    </div>
+  </div>
+  

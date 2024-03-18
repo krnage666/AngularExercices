@@ -1,0 +1,39 @@
+
+<div class="container">
+  <h2>Ajout d'Article</h2>
+  <label for="itemName"></label>
+  <input
+    id="itemName"
+    [(ngModel)]="newItem"
+    required="required"
+    placeholder="Enter article"
+  />
+  <!-- Ajouter un message d'erreur si le champ itemName n'est pas rempli -->
+  <div *ngIf="!newItem" class="error-message">Nom requis !</div>
+  <br />
+  <label for="itemQuantity"></label>
+  <input
+    id="itemQuantity"
+    type="number"
+    required="required"
+    min="1"
+    max="5"
+    [(ngModel)]="quantity"
+    [disabled]="isQuantityDisabled()"
+    placeholder="Enter quantity"
+  />
+  <!-- Ajouter des messages de notification -->
+  <div *ngIf="isQuantityExceeded" class="notification">
+     Quantité max de 5 !
+  </div>
+  <!--Ajouter message duplicate i,,,,,,,,,,,,  tem-->
+  <div *ngIf="isItemDuplicate" class="notification">
+    Produit déja dans la Liste
+  </div>
+  <br /><br />
+  <!-- Afficher la date et l'heure -->
+  <!--<input type="text" id="datetime" [value]="formattedDateTime" readonly />-->
+  <button (click)="addItem()">Ajouter</button>
+  <button (click)="navigateToShoppingList()">Liste </button>
+</div>
+

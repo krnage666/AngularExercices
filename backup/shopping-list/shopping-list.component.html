@@ -1,0 +1,14 @@
+<br />
+<nav>
+  <div class="container">
+    <h4>Ma liste</h4>
+    <!--img src="assets\Imgs\Cady.jpg" width="100%" style="border-radius: 50%" /-->
+  </div>
+  <table class="shopping-table">
+    <tr *ngFor="let item of shoppingList; let i = index">
+      <td>{{ item }}</td>
+      <td><button (click)="removeItem(i)">Retirer</button></td>
+    </tr>
+  </table>
+</nav>
+
